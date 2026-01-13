@@ -1,6 +1,7 @@
 package com.github.ssquadteam.hytaleminiformat
 
 import com.hypixel.hytale.server.core.Message
+import com.hypixel.hytale.protocol.MaybeBool
 import java.awt.Color
 import java.util.regex.Pattern
 
@@ -120,8 +121,7 @@ object MiniFormat {
             if (style.bold) msg.bold(true)
             if (style.italic) msg.italic(true)
             if (style.underlined) {
-                 // Inline implementation of underlined extension to avoid external dependencies
-                 msg.formattedMessage.underlined = com.hypixel.hytale.protocol.MaybeBool.True
+                 msg.formattedMessage.underlined = MaybeBool.True
             }
             if (style.monospace) msg.monospace(true)
         }
